@@ -1,0 +1,6 @@
+app_project_root: /code
+app_user: nginx
+app_group: nginx
+app_server_name: crm.local
+swap_file_path: /mnt/swap
+swap_file_size_kb: 1024000

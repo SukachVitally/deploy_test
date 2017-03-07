@@ -1,0 +1,9 @@
+---
+- name: Add mogno repo
+  copy: src=mongodb-org.repo dest=/etc/yum.repos.d/mongodb-org.repo
+
+- name: Install mongo
+  yum: name=mongodb-org state=latest
+
+- name: Ensure mongo running
+  service: name=mongod state=started enabled=yes

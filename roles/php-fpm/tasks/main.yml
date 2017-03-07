@@ -1,0 +1,21 @@
+---
+- name: Install php-fpm
+  yum: name={{ item }} state=latest
+  with_items:
+    - php
+    - php-fpm
+    - php-pgsql
+    - php-pecl-mongo
+
+- name: Copy nginx config
+  template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf
+  notify:
+    - restart php-fpm
+
+- name: PHP - config timezone
+  ini_file: dest=/etc/php.ini section=Date option=date.timezone value=Europe/Copenhagen
+  notify:
+    - restart php-fpm
+
+- name: Ensure php-fpm running
+  service: name=php-fpm state=started enabled=yes

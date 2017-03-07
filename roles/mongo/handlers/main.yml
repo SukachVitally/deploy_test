@@ -1,0 +1,3 @@
+---
+- name: restart mongo
+  action: service name=mongod state=restarted enabled=yes

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+
+  roles:
+    # - common
+    # - swap
+    # - utils
+    # - nginx
+    - php-fpm
+    # - phpunit
+    # - composer
+    # - mongo

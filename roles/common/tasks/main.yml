@@ -1,0 +1,15 @@
+---
+- name: Update system
+  yum: name=* state=latest
+
+- name: Install epel-release
+  yum: name=epel-release state=latest
+
+- name: Install python-setuptools
+  yum: name=python-setuptools state=present
+
+- name: Install selinux bindings
+  yum: name=libselinux-python state=present
+
+- name: Install git
+  yum: name=git state=latest

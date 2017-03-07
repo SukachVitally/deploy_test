@@ -1,0 +1,7 @@
+---
+- name: Check if phpunit exists.
+  stat: path=/usr/local/bin/phpunit
+  register: phpunit_file
+
+- name: Install Phpunit
+  get_url: url=https://phar.phpunit.de/phpunit.phar dest=/usr/local/bin/phpunit mode=555
