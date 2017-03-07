@@ -1,0 +1,15 @@
+---
+- name: install erlang
+  yum: name=erlang state=latest
+
+- name: import rabbitmq key
+  rpm_key: state=present key=https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
+
+- name: install rabbitmq-server
+  yum: name=rabbitmq-server state=latest
+
+- name: Install management plugin
+  shell: rabbitmq-plugins enable rabbitmq_management
+
+- name: Ensure rabbitmq running
+  service: name=rabbitmq-server  state=started enabled=yes

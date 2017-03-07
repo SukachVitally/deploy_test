@@ -6,6 +6,9 @@
     - php-fpm
     - php-pgsql
     - php-pecl-mongo
+    - php-pecl-xdebug
+    - php-mcrypt
+    - php-pecl-amqp
 
 - name: Copy nginx config
   template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf

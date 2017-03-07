@@ -1,0 +1,3 @@
+---
+- name: restart rabbitmq
+  action: service name=rabbitmq state=restarted enabled=yes
