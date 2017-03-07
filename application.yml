@@ -3,11 +3,11 @@
   become: yes
 
   roles:
-    # - common
-    # - swap
-    # - utils
-    # - nginx
+    - common
+    - swap
+    - utils
+    - nginx
     - php-fpm
-    # - phpunit
-    # - composer
-    # - mongo
+    - phpunit
+    - composer
+    - mongo
