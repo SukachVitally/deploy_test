@@ -9,6 +9,8 @@
     - php-pecl-xdebug
     - php-mcrypt
     - php-pecl-amqp
+    - php-mbstring
+    - php-pecl-geoip
 
 - name: Copy nginx config
   template: src=www.conf.j2 dest=/etc/php-fpm.d/www.conf

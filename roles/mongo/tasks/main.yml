@@ -3,7 +3,10 @@
   copy: src=mongodb-org.repo dest=/etc/yum.repos.d/mongodb-org.repo
 
 - name: Install mongo
-  yum: name=mongodb-org state=latest
+  yum: name={{ item }} state=latest
+  with_items:
+    - mongo-10gen
+    - mongo-10gen-server
 
 - name: Ensure mongo running
   service: name=mongod state=started enabled=yes

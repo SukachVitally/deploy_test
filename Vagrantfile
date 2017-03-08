@@ -5,13 +5,14 @@ Vagrant.configure(2) do |config|
   config.vm.box = "bento/centos-7.2"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 1024
     v.cpus = 1
   end
 
-  config.vm.synced_folder "/home/user/work/murka/crm", "/code"
+  config.vm.synced_folder "/home/sukach/docs/Work/murka/crm", "/code"
 
   config.ssh.insert_key = false
+  config.ssh.forward_agent = true
 
   config.vm.provision "ansible" do |ansible|
     ansible.verbose = "v"
